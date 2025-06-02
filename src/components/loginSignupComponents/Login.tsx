@@ -21,6 +21,7 @@ function Login({
   const [loading, setLoading] = useState<boolean>(false);
   const [message, setMessage] = useState<string>("");
   const [success, setSuccess] = useState<boolean>(false);
+const apiUrl = import.meta.env.VITE_API_BASE_URL;
 
   // Handle Login
   const handleLogin = async () => {
@@ -28,7 +29,7 @@ function Login({
     setMessage("");
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/user/req-login",
+      `${apiUrl}:3000/api/user/req-login` ,
         { email, password }
       );
       localStorage.setItem("token", response.data.token);

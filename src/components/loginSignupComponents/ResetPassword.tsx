@@ -11,6 +11,7 @@ function ResetPassword() {
   const [loading, setLoading] = useState<boolean>(false);
   const [message, setMessage] = useState<string>("");
   const [success, setSuccess] = useState<boolean>(false);
+const apiUrl = import.meta.env.VITE_API_BASE_URL;
 
   // Handle Password Reset
   const handleResetPassword = async () => {
@@ -24,7 +25,7 @@ function ResetPassword() {
     setMessage("");
 
     try {
-      const response = await axios.post(`http://localhost:3000/api/user/req-new-password/${token}`, {
+      const response = await axios.post(`${apiUrl}/api/user/req-new-password/${token}`, {
         newPassword,
       });
 

@@ -6,6 +6,7 @@ interface RequestResetPasswordProps {
   setRequestResetPasswordPopUp: React.Dispatch<React.SetStateAction<boolean>>;
   setLoginPopUp: React.Dispatch<React.SetStateAction<boolean>>;
 }
+const apiUrl = import.meta.env.VITE_API_BASE_URL;
 
 function RequestResetPassword({
   setRequestResetPasswordPopUp,setLoginPopUp
@@ -22,7 +23,7 @@ function RequestResetPassword({
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/user/req-reset-password",
+        `${apiUrl}/api/user/req-reset-password`,
         { email }
       );
 

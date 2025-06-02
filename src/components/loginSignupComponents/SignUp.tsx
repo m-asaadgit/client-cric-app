@@ -6,6 +6,7 @@ interface SignUpProps {
   setLoginPopUp: React.Dispatch<React.SetStateAction<boolean>>;
   setAuthResult: React.Dispatch<React.SetStateAction<boolean>>;
 }
+const apiUrl = import.meta.env.VITE_API_BASE_URL;
 
 function SignUp({ setSignUpPopUp ,setLoginPopUp,setAuthResult}: SignUpProps) {
   const [name, setName] = useState<string>("");
@@ -24,7 +25,7 @@ function SignUp({ setSignUpPopUp ,setLoginPopUp,setAuthResult}: SignUpProps) {
     setMessage("");
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/user/req-otp",
+        `${apiUrl}/api/user/req-otp`,
         { email }
       );
       setSuccess(true);
@@ -44,7 +45,7 @@ function SignUp({ setSignUpPopUp ,setLoginPopUp,setAuthResult}: SignUpProps) {
     setMessage("");
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/user/req-signup", // Correct endpoint
+        `${apiUrl}/api/user/req-signup`, // Correct endpoint
         { name, email, password, otp }
       );
       setMessage(response.data.message);
