@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import io from "socket.io-client";
 import axios from "axios";
+const apiUrl = import.meta.env.VITE_API_BASE_URL;
 
 // Connect to WebSocket server
-const socket = io("http://localhost:3000");
+const socket = io(apiUrl);
 
 const IOcheck = () => {
   const [matchData, setMatchData] = useState(null);
@@ -14,7 +15,7 @@ const IOcheck = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/api/client-side/matches-of/${categoryId}`
+          `${apiUrl}/api/client-side/matches-of/${categoryId}`
         );
         setMatchData(response.data.data);
       } catch (error) {

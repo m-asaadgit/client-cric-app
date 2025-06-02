@@ -3,6 +3,7 @@ import axios from "axios";
 import { MdArrowDropUp } from "react-icons/md";
 import { IoMdArrowDropdown } from "react-icons/io";
 import toast from "react-hot-toast";
+const apiUrl = import.meta.env.VITE_API_BASE_URL;
 
 const TournamentAndSeriesCreation = () => {
   const [matchType, setMatchType] = useState<string>("series");
@@ -38,7 +39,7 @@ const TournamentAndSeriesCreation = () => {
 
     try {
       const response = await axios.post<{ message: string; success: boolean }>(
-        "http://localhost:3000/api/tournaments-series",
+        `${apiUrl}/api/tournaments-series`,
         { matchType, name },
         {
           headers: {

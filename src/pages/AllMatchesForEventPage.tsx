@@ -91,12 +91,13 @@ function AllMatchesForEventPage() {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string>("");
   const [event, setEvent] = useState<string>("");
+const apiUrl = import.meta.env.VITE_API_BASE_URL;
 
   useEffect(() => {
     const fetchMatches = async () => {
       try {
         const response = await axios.get<MatchResponse>(
-          `http://localhost:3000/api/client-side/matches-of/${id}`
+          `${apiUrl}/api/client-side/matches-of/${id}`
         );
         setMatches(response.data.data);
         setEvent(response.data.eventName.name);
@@ -110,7 +111,7 @@ function AllMatchesForEventPage() {
     const fetchAdminVerification = async () => {
       try {
         const response = await axios.get<MatchResponse>(
-          `http://localhost:3000/api/user/verify-event-updater/${id}`,
+          `${apiUrl}/api/user/verify-event-updater/${id}`,
           {
             headers: {
               Authorization: `Bearer ${token}`

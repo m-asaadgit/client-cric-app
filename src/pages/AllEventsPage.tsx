@@ -16,6 +16,7 @@ interface EventData {
 }
 
 const allEvents = ["All", "Series", "Tournament"];
+const apiUrl = import.meta.env.VITE_API_BASE_URL;
 
 function AllEventsPage() {
   const [series, setSeries] = useState<EventData[]>([]);
@@ -40,8 +41,7 @@ function AllEventsPage() {
 
     try {
       const response = await axios.get(
-        "http://localhost:3000/api/client-side/all-events"
-      );
+        `${apiUrl}/api/client-side/all-events`);
 
       setSeries(response.data.seriesData);
       setTournaments(response.data.tournamentData);

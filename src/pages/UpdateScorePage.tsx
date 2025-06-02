@@ -87,6 +87,8 @@ interface Player {
     | "Not Out"
     | "LBW";
 }
+const apiUrl = import.meta.env.VITE_API_BASE_URL;
+
 
 function UpdateScorePage() {
   const navigate = useNavigate();
@@ -146,7 +148,7 @@ function UpdateScorePage() {
 
     try {
       var response = await axios.get(
-        `http://localhost:3000/api/user/verify-match-updater/${matchId}`,
+        `${apiUrl}/api/user/verify-match-updater/${matchId}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -325,7 +327,7 @@ function UpdateScorePage() {
             verifyIsAdmin={verifyIsAdmin}
             batterList={batter}
             firstInningOfNormalInning={firstInningOfNormalInning}
-            url={"http://localhost:3000/api/unlisted-match/new-batter/"}
+            url={`${apiUrl}/api/unlisted-match/new-batter/`}
           ></AddNewBatter>
         </div>
       )}
@@ -335,7 +337,7 @@ function UpdateScorePage() {
             verifyIsAdmin={verifyIsAdmin}
             batterList={batter}
             firstInningOfNormalInning={firstInningOfNormalInning}
-            url={"http://localhost:3000/api/unlisted-match/new-batter/"}
+            url={`${apiUrl}/api/unlisted-match/new-batter/`}
           ></AddNewBatter>
         </div>
       )}
@@ -347,7 +349,7 @@ function UpdateScorePage() {
               return item.isTwelfthMan == false;
             })}
             firstInningOfNormalInning={firstInningOfNormalInning}
-            url={"http://localhost:3000/api/unlisted-match/new-bowler/"}
+            url={`${apiUrl}/api/unlisted-match/new-bowler/`}
           ></AddNextBowler>
         </div>
       )}

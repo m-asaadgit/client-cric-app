@@ -9,8 +9,9 @@ import Header from "../components/MatchCompleteDetailsPageComponents/Header";
 import CurrentMatchLiveDetail from "../components/MatchCompleteDetailsPageComponents/CurrentMatchLiveDetail";
 import ErrorHandler from "../utils/ErrorHandler";
 import io from "socket.io-client";
+const apiUrl = import.meta.env.VITE_API_BASE_URL;
 
-const socket = io("http://localhost:3000"); // Connect to your server
+const socket = io(apiUrl); // Connect to your server
 interface data {
   teamAName: string;
   teamBName: string;
@@ -28,7 +29,7 @@ const MatchCompleteDetailsPage = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/api/client-side/${matchId}`
+          `${apiUrl}/api/client-side/${matchId}`
         );
         console.log("API Response:", response.data); // Debugging
         setData(response.data.data);
