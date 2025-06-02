@@ -2,7 +2,7 @@ import Divider from "../../utils/Divider";
 import BattersList from "../MatchBattingBowlinfCompleteStatsDetails/BattersList";
 import BattingTeamExtraRunsCard from "../MatchBattingBowlinfCompleteStatsDetails/BattingTeamExtraRunsCard";
 import BattingTeamStats from "../MatchBattingBowlinfCompleteStatsDetails/BattingTeamStats";
-import BowlingTeamStats from "../MatchBattingBowlinfCompleteStatsDetails/bowlingTeamStats";
+import BowlingTeamStats from "../MatchBattingBowlinfCompleteStatsDetails/BowlingTeamStats";
 import TotalRunsCard from "../MatchBattingBowlinfCompleteStatsDetails/TotalRunsCard";
 import WicketsFallen from "../MatchBattingBowlinfCompleteStatsDetails/WicketsFallen";
 import YetToBat from "../MatchBattingBowlinfCompleteStatsDetails/YetToBat";

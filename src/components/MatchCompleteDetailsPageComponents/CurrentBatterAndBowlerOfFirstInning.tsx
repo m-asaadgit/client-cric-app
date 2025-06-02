@@ -1,6 +1,4 @@
 import { Key } from "react";
-import RunsNeeded from "./RunsNeeded";
-import MatchScore from "../MatchScore";
 
 interface aTeamBatterStatsInterface {
   aTeambattingStats: aTeambattingStatsInterface[];

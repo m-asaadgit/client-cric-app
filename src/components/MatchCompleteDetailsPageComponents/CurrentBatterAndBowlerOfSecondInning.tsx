@@ -1,4 +1,4 @@
-import { Key, useState } from "react";
+import { Key } from "react";
 import RunsNeeded from "./RunsNeeded";
 
 interface bTeamBatterStatsInterface {

@@ -1,5 +1,4 @@
-import React, { Key } from "react";
-import TeamNames from "./TeamNames";
+import  { Key } from "react";
 interface battersInterface {
   batsmanName: string;
   runs: number;

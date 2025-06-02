@@ -1,6 +1,5 @@
 import { useState, useEffect, useMemo, useCallback, useRef } from "react";
 import axios from "axios";
-import Loader from "../utils/Loader";
 import { IoMdArrowDropdown, IoMdArrowDropright } from "react-icons/io";
 import { MdArrowDropUp } from "react-icons/md";
 import { Link } from "react-router-dom";
